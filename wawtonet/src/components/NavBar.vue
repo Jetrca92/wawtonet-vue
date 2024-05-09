@@ -1,6 +1,6 @@
 <template>
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar mb-3" role="navigation" aria-label="main navigation">
 
         <div class="navbar-brand">
             <a class="navbar-item" href="">
@@ -34,10 +34,10 @@
                 <div class="navbar-item">
                     <div class="buttons">
                         <a class="button is-primary">
-                            <strong>Sign up</strong>
+                            <strong>Registracija</strong>
                         </a>
                         <a class="button is-light">
-                            Log in
+                            Prijava
                         </a>
                     </div>
                 </div>
