@@ -6,9 +6,9 @@
                 <div class="field">
                     <div class="control">
                         <div class="select is-fullwidth">
-                            <select>
+                            <select v-model="izbranaZnamka" @change="resetModel">
                                 <option>Vse znamke</option>
-                                <option v-for="znamka in znamke">{{ znamka }}</option>
+                                <option v-for="znamka in znamkeAvtomobilov" :value="znamka.ime">{{ znamka.ime }}</option>
                             </select>
                         </div>
                     </div>
@@ -17,8 +17,9 @@
                 <div class="field">
                     <div class="control">
                         <div class="select is-fullwidth">
-                            <select>
+                            <select v-model="izbranModel">
                                 <option>Model</option>
+                                <option v-for="model in izbranaZnamkaModeli" :value="model">{{ model }}</option>
                             </select>
                         </div>
                     </div>
@@ -91,6 +92,10 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="control">
+                    <button class="button is-info is-fullwidth">Iskanje vozil</button>
+                </div>
             </div>
         </div>
       
@@ -98,5 +103,17 @@
 </template>
 
 <script setup>
+import znamke from '../constants/znamke.json'
+import { ref, computed } from 'vue'
 
+const znamkeAvtomobilov = ref(znamke.znamke)
+const izbranaZnamka = ref('Vse znamke')
+const izbranModel = ref('Model')
+const izbranaZnamkaModeli = computed(() => {
+    const najdenaZnamka = znamkeAvtomobilov.value.find(brand => brand.ime === izbranaZnamka.value)
+    return najdenaZnamka ? najdenaZnamka.modeli : []
+})
+const resetModel = () => {
+    izbranModel.value = 'Model'
+}
 </script>

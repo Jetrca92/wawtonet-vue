@@ -1,0 +1,99 @@
+{
+    "znamke": [
+        {
+            "ime": "Audi",
+            "modeli": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8"
+            ]
+        },
+        {
+            "ime": "BMW",
+            "modeli": [
+            "1 Series",
+            "2 Series",
+            "3 Series",
+            "4 Series",
+            "5 Series",
+            "6 Series",
+            "7 Series",
+            "8 Series"
+            ]
+        },
+        {
+            "ime": "Citroen",
+            "modeli": [
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C8"
+            ]
+        },
+        {
+            "ime": "Ford",
+            "modeli": [
+            "Fiesta",
+            "Focus",
+            "Mondeo",
+            "Mustang",
+            "Ranger"
+            ]
+        },
+        {
+            "ime": "Mercedes-Benz",
+            "modeli": [
+            "A-Class",
+            "C-Class",
+            "E-Class",
+            "S-Class",
+            "GLA",
+            "GLC",
+            "GLE",
+            "GLS"
+            ]
+        },
+        {
+            "ime": "Renault",
+            "modeli": [
+            "Clio",
+            "Megane",
+            "Scenic",
+            "Kadjar",
+            "Captur",
+            "Koleos"
+            ]
+        },
+        {
+            "ime": "Škoda",
+            "modeli": [
+            "Fabia",
+            "Octavia",
+            "Superb",
+            "Karoq",
+            "Kodiaq",
+            "Scala"
+            ]
+        },
+        {
+            "ime": "Volkswagen",
+            "modeli": [
+            "Golf",
+            "Polo",
+            "Passat",
+            "Tiguan",
+            "Touareg",
+            "Arteon"
+            ]
+        }
+    ]
+}
+  
