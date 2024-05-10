@@ -33,6 +33,7 @@
                         <div class="select is-fullwidth">
                             <select>
                                 <option>Cena od</option>
+                                <option v-for="cena in cene" :value="cena">od {{ cena }} EUR</option>
                             </select>
                         </div>
                     </div>
@@ -43,6 +44,7 @@
                         <div class="select is-fullwidth">
                             <select>
                                 <option>Cena do</option>
+                                <option v-for="cena in cene" :value="cena">do {{ cena }} EUR</option>
                             </select>
                         </div>
                     </div>
@@ -56,6 +58,7 @@
                         <div class="select is-fullwidth">
                             <select>
                                 <option>Letnik od</option>
+                                <option v-for="letnik in letniki" :value="letnik">od {{ letnik }}</option>
                             </select>
                         </div>
                     </div>
@@ -66,6 +69,7 @@
                         <div class="select is-fullwidth">
                             <select>
                                 <option>Letnik do</option>
+                                <option v-for="letnik in letniki" :value="letnik">do {{ letnik }}</option>
                             </select>
                         </div>
                     </div>
@@ -78,6 +82,7 @@
                         <div class="select is-fullwidth">
                             <select>
                                 <option>Prevoženih km do</option>
+                                <option v-for="kilometer in kilometri" :value="kilometer">do {{ kilometer }} km</option>
                             </select>
                         </div>
                     </div>
@@ -88,6 +93,7 @@
                         <div class="select is-fullwidth">
                             <select>
                                 <option>Gorivo</option>
+                                <option v-for="gorivo in goriva" :value="gorivo">{{ gorivo }}</option>
                             </select>
                         </div>
                     </div>
@@ -104,9 +110,14 @@
 
 <script setup>
 import znamke from '../constants/znamke.json'
+import hitroIskanje from '../constants/hitroIskanje.json'
 import { ref, computed } from 'vue'
 
 const znamkeAvtomobilov = ref(znamke.znamke)
+const cene = ref(hitroIskanje.cena)
+const letniki = ref(hitroIskanje.letnik)
+const kilometri = ref(hitroIskanje.kilometri)
+const goriva = ref(hitroIskanje.gorivo)
 const izbranaZnamka = ref('Vse znamke')
 const izbranModel = ref('Model')
 const izbranaZnamkaModeli = computed(() => {
