@@ -56,7 +56,7 @@
                 <div class="field">
                     <div class="control">
                         <div class="select is-fullwidth">
-                            <select>
+                            <select v-model="izbranLetnikOd" @change="disableLetnikDo">
                                 <option>Letnik od</option>
                                 <option v-for="letnik in letniki" :value="letnik">od {{ letnik }}</option>
                             </select>
@@ -67,9 +67,9 @@
                 <div class="field">
                     <div class="control">
                         <div class="select is-fullwidth">
-                            <select>
+                            <select v-model="izbranLetnikDo">
                                 <option>Letnik do</option>
-                                <option v-for="letnik in letniki" :value="letnik">do {{ letnik }}</option>
+                                <option v-for="letnik in letnikiDo" :value="letnik">do {{ letnik }}</option>
                             </select>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                 <div class="field">
                     <div class="control">
                         <div class="select is-fullwidth">
-                            <select>
+                            <select v-model="izbraniKmdo">
                                 <option>Prevoženih km do</option>
                                 <option v-for="kilometer in kilometri" :value="kilometer">do {{ kilometer }} km</option>
                             </select>
@@ -91,7 +91,7 @@
                 <div class="field">
                     <div class="control">
                         <div class="select is-fullwidth">
-                            <select>
+                            <select v-model="izbranoGorivo">
                                 <option>Gorivo</option>
                                 <option v-for="gorivo in goriva" :value="gorivo">{{ gorivo }}</option>
                             </select>
@@ -120,11 +120,25 @@ const kilometri = ref(hitroIskanje.kilometri)
 const goriva = ref(hitroIskanje.gorivo)
 const izbranaZnamka = ref('Vse znamke')
 const izbranModel = ref('Model')
+const izbraniKmdo = ref('Prevoženih km do')
+const izbranoGorivo = ref('Gorivo')
+const izbranLetnikDo = ref('Letnik do')
+const izbranLetnikOd = ref('Letnik od')
+
 const izbranaZnamkaModeli = computed(() => {
     const najdenaZnamka = znamkeAvtomobilov.value.find(brand => brand.ime === izbranaZnamka.value)
     return najdenaZnamka ? najdenaZnamka.modeli : []
 })
+
 const resetModel = () => {
     izbranModel.value = 'Model'
 }
+
+const letnikiDo = computed(() => {
+    if (izbranLetnikOd.value === 'Letnik od') {
+        return letniki.value
+    }
+    const noviLetniki = letniki.value.filter(letnik => letnik >= izbranLetnikOd.value)
+    return noviLetniki
+})
 </script>
